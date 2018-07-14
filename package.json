@@ -1,0 +1,42 @@
+{
+  "name": "democrm",
+  "version": "1.0.0",
+  "description": "Demo CRM with express and angular",
+  "main": "index.js",
+  "engines": {
+    "node": "8.10.0",
+    "npm": "6.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "clientcrm-install": "npm install --prefix clientcrm",
+    "clientcrm": "npm run start --prefix clientcrm",
+    "dev": "concurrently \"npm run server\" \"npm run clientcrm\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run clientcrm-install && npm run build --prefix clientcrm"
+  },
+  "keywords": [
+    "angular",
+    "express"
+  ],
+  "author": "Sergey Zinovev",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "log": "^1.4.0",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.3"
+  }
+}
